@@ -119,3 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+RESOURCES_DIR = os.path.join(BASE_DIR, 'resources')
+IMAGES_DIR = os.path.join(RESOURCES_DIR, 'images')

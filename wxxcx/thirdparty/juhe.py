@@ -1,3 +1,4 @@
+import datetime
 import json
 import requests
 
@@ -22,11 +23,13 @@ def weather(cityname):
     # print(result)
     sk = result.get('realtime')
     response = dict()
+    response['city'] = cityname
     response['temperature'] = sk.get('temperature')
     response['info'] = sk.get('info')
     response['wid'] = sk.get('wid')
     response['humidity'] = sk.get('humidity')
     response['aqi'] = sk.get('aqi')
+    response['nowtime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return response
 
 # if __name__ == '__main__':

@@ -19,6 +19,21 @@ def image(request):
             # return HttpResponse(content=data, content_type='image/jpg')
 
 
+class ImageListView(View,appresponse.CommonResponseMixin ):
+    def get(self,request):
+        image_files = os.listdir(settings.IMAGES_DIR)
+        response_data = []
+        for image_file in image_files:
+            response_data.append(
+                {
+                    "name": image_file,
+                    "md5": image_file[:-4]
+                }
+            )
+        response_data = self.wrap_json_response(data=response_data)
+        return JsonResponse(data=response_data)
+
+
 class ImageView(View,appresponse.CommonResponseMixin):
     def get(self,request):
         md5 = request.GET.get('md5')

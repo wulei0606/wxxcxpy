@@ -6,6 +6,13 @@ published:
       publish_date: 2019-05-10
       url: /service/weather
       desc: 这是一个天气应用。
+  - app:
+      category: life
+      application: backup-image
+      name: 图片备份
+      publish_date: 2019-05-15
+      url: /service/image
+      desc: 这是一个图片备份应用。
 
 developing:
   - app:

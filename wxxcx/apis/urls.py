@@ -16,6 +16,8 @@ urlpatterns = [
     #
     path('imagetext',image.image_text,name='imagetext'),
     #类视图测试
-    path('image',image.ImageView.as_view(),name='image')
+    path('image',image.ImageView.as_view(),name='image'),
+
+    path('image/list', image.ImageListView.as_view(), name='imagelist'),
 
 ]

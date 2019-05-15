@@ -20,11 +20,16 @@ class WeatherView(View,CommonResponseMixin):
         recived_body = json.loads(recived_body)
         cities = recived_body.get('cities')
         data = []
+        # print(cities)
         for city in cities:
-            result = juhe.weather(city)
+            # print(city)
+            # print(city['city'])
+            result = juhe.weather(city['city'])
+            # print(result)
+            result['city_info'] = city
             data.append(result)
 
-        data = self.wrap_json_response(data=data)
-        return JsonResponse(data=data, safe=False)
+        response_data = self.wrap_json_response(data=data)
+        return JsonResponse(data=response_data, safe=False)
 
 

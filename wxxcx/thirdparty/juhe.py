@@ -19,16 +19,19 @@ def weather(cityname):
     response = requests.get(url=url)
     json_data = json.loads(response.text)
     # print(json_data)
-    result = json_data.get('result')
+    result = json_data['result']
     # print(result)
-    sk = result.get('realtime')
+    sk = result['realtime']
+    # print(sk)
     response = dict()
     response['city'] = cityname
-    response['temperature'] = sk.get('temperature')
-    response['info'] = sk.get('info')
-    response['wid'] = sk.get('wid')
-    response['humidity'] = sk.get('humidity')
-    response['aqi'] = sk.get('aqi')
+    response['temperature'] = sk['temperature']
+    response['info'] = sk['info']
+    response['wid'] = sk['wid']
+    response['humidity'] = sk['humidity']
+    response['aqi'] = sk['aqi']
+    response['direct'] = sk['direct']
+    response['power'] = sk['power']
     response['nowtime'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return response
 

@@ -65,6 +65,7 @@ class ImageView(View,appresponse.CommonResponseMixin):
 
     def delete(self,request):
         md5 = request.GET.get('md5')
+        print(md5)
         img_name = md5 + '.jpg'
         path = os.path.join(settings.IMAGES_DIR,img_name)
         if os.path.exists(path):

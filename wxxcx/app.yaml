@@ -4,15 +4,37 @@ published:
       application: weather
       name: 天气
       publish_date: 2019-05-10
-      url: /service/weather
+      url: /services/weather
       desc: 这是一个天气应用。
   - app:
       category: life
       application: backup-image
       name: 图片备份
       publish_date: 2019-05-15
-      url: /service/image
+      url: /services/image
       desc: 这是一个图片备份应用。
+  - app:
+      category: life
+      application: stock
+      name: 股票
+      publish_date: 2019-05-16
+      url: /services/stock
+      desc: 这是一个股票数据应用。
+
+  - app:
+      category: life
+      application: constellation
+      name: 星座运势
+      publish_date: 2019-05-16
+      url: /services/constellation
+      desc: 这是一个星座运势应用。
+  - app:
+      category: life
+      application: joke
+      name: 笑话大全
+      publish_date: 2019-05-16
+      url: /services/joke
+      desc: 这是一个笑话大全应用。
 
 developing:
   - app:
